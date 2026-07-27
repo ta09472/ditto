@@ -1,6 +1,7 @@
 import AudioToolbox
 import AVFoundation
 import CoreImage
+import CoreImage.CIFilterBuiltins
 import Photos
 import UIKit
 
@@ -65,6 +66,10 @@ final class CameraManager: NSObject, ObservableObject {
     private var recordingURL: URL?
 
     func start() {
+        #if targetEnvironment(simulator)
+        runSimulatorFeed()
+        return
+        #endif
         AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
             guard let self else { return }
             guard granted else {
@@ -76,6 +81,99 @@ final class CameraManager: NSObject, ObservableObject {
             }
         }
     }
+
+    #if targetEnvironment(simulator)
+    // 스크린샷 자동화를 위해 초기 상태를 환경변수로 받는다.
+    override init() {
+        super.init()
+        let env = ProcessInfo.processInfo.environment
+        if let v = env["DEMO_FILTER"], let match = Filter.allCases.first(where: { $0.rawValue == v }) {
+            filter = match
+        }
+        if let v = env["DEMO_MODEL"], let match = DigicamModel.all.first(where: { $0.name == v }) {
+            digicamModel = match
+        }
+        if let v = env["DEMO_RECIPE"], let match = RecipePreset.all.first(where: { $0.name == v }) {
+            recipePreset = match
+        }
+        if let v = env["DEMO_DITHER"], let n = Float(v) { ditherBlock = n }
+    }
+
+    // 시뮬레이터에는 카메라가 없어 필터 파이프라인을 확인할 수 없다.
+    // 합성 씬을 프레임 소스로 공급해 프리뷰·필터·UI가 그대로 동작하게 한다.
+    // (실기기 빌드에는 포함되지 않음)
+    private var simulatorTimer: Timer?
+
+    private func runSimulatorFeed() {
+        let scene = Self.sampleScene()
+        DispatchQueue.main.async { [self] in
+            simulatorTimer = Timer.scheduledTimer(withTimeInterval: 1.0 / 30, repeats: true) { [weak self] _ in
+                guard let self else { return }
+                self.frameCount += 1
+                var image = self.filter.apply(to: self.cropToAspect(scene),
+                                              frameCount: self.frameCount,
+                                              digicam: self.digicamModel,
+                                              recipe: self.recipePreset,
+                                              ditherBlock: self.ditherBlock)
+                if self.timestampOn { image = Timestamp.stamp(on: image) }
+                self.latestImage = image
+                self.onFrame?()
+            }
+        }
+    }
+
+    // 필터 특성이 드러나도록 구성한 합성 씬:
+    // 노을 그라디언트(색 튜닝) + 태양(하이라이트 클리핑·블룸) +
+    // 색 패치(채도·WB) + 체커보드(해상도·샤프닝)
+    private static func sampleScene() -> CIImage {
+        let bounds = CGRect(x: 0, y: 0, width: 1080, height: 1920)
+
+        let sky = CIFilter.linearGradient()
+        sky.point0 = CGPoint(x: 0, y: bounds.maxY)
+        sky.color0 = CIColor(red: 0.07, green: 0.13, blue: 0.33)
+        sky.point1 = CGPoint(x: 0, y: bounds.midY * 0.9)
+        sky.color1 = CIColor(red: 0.99, green: 0.58, blue: 0.26)
+        var scene = sky.outputImage!.cropped(to: bounds)
+
+        scene = CIImage(color: CIColor(red: 0.06, green: 0.06, blue: 0.08))
+            .cropped(to: CGRect(x: 0, y: 0, width: bounds.width, height: 620))
+            .composited(over: scene)
+
+        let sun = CIFilter.radialGradient()
+        sun.center = CGPoint(x: bounds.midX, y: bounds.midY * 0.98)
+        sun.radius0 = 70
+        sun.radius1 = 190
+        sun.color0 = CIColor(red: 1, green: 1, blue: 0.97)
+        sun.color1 = CIColor(red: 1, green: 0.8, blue: 0.4, alpha: 0)
+        scene = sun.outputImage!.cropped(to: bounds).composited(over: scene)
+
+        // 색 패치 — 채도·화이트밸런스 차이 확인용 (피부톤 포함)
+        let patches: [CIColor] = [
+            CIColor(red: 0.85, green: 0.22, blue: 0.20),
+            CIColor(red: 0.95, green: 0.75, blue: 0.62),
+            CIColor(red: 0.22, green: 0.52, blue: 0.30),
+            CIColor(red: 0.20, green: 0.38, blue: 0.72),
+            CIColor(red: 0.93, green: 0.85, blue: 0.30),
+            CIColor(red: 0.92, green: 0.92, blue: 0.92),
+        ]
+        for (i, color) in patches.enumerated() {
+            let rect = CGRect(x: 60 + CGFloat(i) * 165, y: 300, width: 145, height: 190)
+            scene = CIImage(color: color).cropped(to: rect).composited(over: scene)
+        }
+
+        // 체커보드 — 해상도 체인·언샤프마스크 헤일로 확인용
+        let checker = CIFilter.checkerboardGenerator()
+        checker.center = .zero
+        checker.color0 = CIColor(red: 0.95, green: 0.95, blue: 0.95)
+        checker.color1 = CIColor(red: 0.1, green: 0.1, blue: 0.1)
+        checker.width = 14
+        scene = checker.outputImage!
+            .cropped(to: CGRect(x: 60, y: 90, width: 960, height: 150))
+            .composited(over: scene)
+
+        return scene
+    }
+    #endif
 
     private func configureAndRun() {
         guard session.inputs.isEmpty else { session.startRunning(); return }

@@ -4,7 +4,13 @@
 
 뉴진스 『Ditto』 뮤직비디오로 다시 유행한 캠코더·디카 감성을, 촬영이 끝난 뒤 보정하는 대신 **뷰파인더에서 그대로 보면서** 찍습니다.
 
-<!-- 스크린샷/데모 GIF는 실기기 촬영본 정리 후 추가 예정 -->
+| 원본 | Ditto | 디카 |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/filter-none.png" width="230"> | <img src="docs/screenshots/filter-ditto.png" width="230"> | <img src="docs/screenshots/filter-digicam.png" width="230"> |
+| **레시피** | **Dither** | **E-ink** |
+| <img src="docs/screenshots/filter-recipe.png" width="230"> | <img src="docs/screenshots/filter-dither.png" width="230"> | <img src="docs/screenshots/filter-eink.png" width="230"> |
+
+<sub>시뮬레이터에는 카메라가 없어, 필터 특성이 드러나도록 구성한 합성 씬(노을 그라디언트·하이라이트·색 패치·체커보드)을 입력으로 사용했습니다. 필터 연산 자체는 실기기와 동일한 커널을 통과한 결과입니다. 실사 촬영본은 추후 추가 예정입니다.</sub>
 
 ![Swift](https://img.shields.io/badge/Swift-5.9-orange)
 ![iOS](https://img.shields.io/badge/iOS-17.0%2B-blue)
