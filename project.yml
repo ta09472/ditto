@@ -1,0 +1,28 @@
+name: Ditto
+options:
+  bundleIdPrefix: com.beomsu
+  deploymentTarget:
+    iOS: "17.0"
+targets:
+  Ditto:
+    type: application
+    platform: iOS
+    sources: [Ditto]
+    info:
+      path: Ditto/Info.plist
+      properties:
+        NSCameraUsageDescription: "카메라로 촬영합니다."
+        NSMicrophoneUsageDescription: "영상 녹화 시 소리를 녹음합니다."
+        NSPhotoLibraryAddUsageDescription: "촬영한 영상을 사진 앱에 저장합니다."
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UIAppFonts: [DotGothic16-Regular.ttf]
+    settings:
+      base:
+        DEVELOPMENT_TEAM: G986RT64FW
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.9"
+        # CIKernel용 Metal 빌드 플래그
+        MTL_COMPILER_FLAGS: "-fcikernel"
+        MTLLINKER_FLAGS: "-cikernel"

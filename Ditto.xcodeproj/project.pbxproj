@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FC62C858A7BBB5F4F673249 /* MetalPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6717DA42E88B237DAE41A /* MetalPreviewView.swift */; };
+		209B00A280A0A7FAA00E84B6 /* DittoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88508A12EE4017B781F1DD12 /* DittoApp.swift */; };
+		295763852004314BBF4F1B95 /* Kernels.ci.metal in Sources */ = {isa = PBXBuildFile; fileRef = 157A6FD411CA602265FEBBFB /* Kernels.ci.metal */; };
+		4B0072527BEBBB70108D836A /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06146B9EDB17E8A46524F68E /* CameraManager.swift */; };
+		660F3EA9FB56933BF0AC7D2E /* DotGothic16-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F04C7444A5356A3AB688D7A4 /* DotGothic16-Regular.ttf */; };
+		77A61385872DE171E9216F61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269DFEA74D34651B94C531EE /* ContentView.swift */; };
+		E808B85D90604CDC890D769D /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC218C2B5935081B196F28 /* Filters.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06146B9EDB17E8A46524F68E /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		157A6FD411CA602265FEBBFB /* Kernels.ci.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.ci.metal; sourceTree = "<group>"; };
+		269DFEA74D34651B94C531EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		88508A12EE4017B781F1DD12 /* DittoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DittoApp.swift; sourceTree = "<group>"; };
+		8D14DF715F8D8C83616FC48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BBB6717DA42E88B237DAE41A /* MetalPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalPreviewView.swift; sourceTree = "<group>"; };
+		C4DC218C2B5935081B196F28 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		D88E0CE576FE664BA717596E /* Ditto.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Ditto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F04C7444A5356A3AB688D7A4 /* DotGothic16-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DotGothic16-Regular.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0ECF965DD2C81E9FBFDF7CAA /* Ditto */ = {
+			isa = PBXGroup;
+			children = (
+				06146B9EDB17E8A46524F68E /* CameraManager.swift */,
+				269DFEA74D34651B94C531EE /* ContentView.swift */,
+				88508A12EE4017B781F1DD12 /* DittoApp.swift */,
+				F04C7444A5356A3AB688D7A4 /* DotGothic16-Regular.ttf */,
+				C4DC218C2B5935081B196F28 /* Filters.swift */,
+				8D14DF715F8D8C83616FC48C /* Info.plist */,
+				157A6FD411CA602265FEBBFB /* Kernels.ci.metal */,
+				BBB6717DA42E88B237DAE41A /* MetalPreviewView.swift */,
+			);
+			path = Ditto;
+			sourceTree = "<group>";
+		};
+		6C74F679108F12330D033AB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D88E0CE576FE664BA717596E /* Ditto.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCB8B769CD59D88611C4E0EB = {
+			isa = PBXGroup;
+			children = (
+				0ECF965DD2C81E9FBFDF7CAA /* Ditto */,
+				6C74F679108F12330D033AB4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48309A3EEF190A6C1DFBF06E /* Ditto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC2E3A3F070AE86F85F72149 /* Build configuration list for PBXNativeTarget "Ditto" */;
+			buildPhases = (
+				AE60B049A08F5237ADDC8869 /* Sources */,
+				13A40EB98FFA47535CE23A5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ditto;
+			packageProductDependencies = (
+			);
+			productName = Ditto;
+			productReference = D88E0CE576FE664BA717596E /* Ditto.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		829C6DF05105F7F6E0BCF0E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					48309A3EEF190A6C1DFBF06E = {
+						DevelopmentTeam = G986RT64FW;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = AE195B1BF47437F8C6BD018A /* Build configuration list for PBXProject "Ditto" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = BCB8B769CD59D88611C4E0EB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6C74F679108F12330D033AB4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48309A3EEF190A6C1DFBF06E /* Ditto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13A40EB98FFA47535CE23A5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660F3EA9FB56933BF0AC7D2E /* DotGothic16-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE60B049A08F5237ADDC8869 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B0072527BEBBB70108D836A /* CameraManager.swift in Sources */,
+				77A61385872DE171E9216F61 /* ContentView.swift in Sources */,
+				209B00A280A0A7FAA00E84B6 /* DittoApp.swift in Sources */,
+				E808B85D90604CDC890D769D /* Filters.swift in Sources */,
+				295763852004314BBF4F1B95 /* Kernels.ci.metal in Sources */,
+				0FC62C858A7BBB5F4F673249 /* MetalPreviewView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B48011CAE0B0B2B267206F82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BEAEE2FE7C958A7D0F5DED55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G986RT64FW;
+				INFOPLIST_FILE = Ditto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTLLINKER_FLAGS = "-cikernel";
+				MTL_COMPILER_FLAGS = "-fcikernel";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beomsu.Ditto;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		C88B644C1136CCFDA88BFDD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G986RT64FW;
+				INFOPLIST_FILE = Ditto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTLLINKER_FLAGS = "-cikernel";
+				MTL_COMPILER_FLAGS = "-fcikernel";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beomsu.Ditto;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F48E780E56B4C7A8B7408108 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE195B1BF47437F8C6BD018A /* Build configuration list for PBXProject "Ditto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B48011CAE0B0B2B267206F82 /* Debug */,
+				F48E780E56B4C7A8B7408108 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DC2E3A3F070AE86F85F72149 /* Build configuration list for PBXNativeTarget "Ditto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C88B644C1136CCFDA88BFDD4 /* Debug */,
+				BEAEE2FE7C958A7D0F5DED55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 829C6DF05105F7F6E0BCF0E4 /* Project object */;
+}
